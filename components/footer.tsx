@@ -50,11 +50,12 @@ const Footer = () => {
               Experiences
             </p>
           </div>
-          <div
-            className="pt-8 space-x-3.5"
-            onClick={() => router.push("/contact")}
-          >
-            <Button variant="dark" size="sm">
+          <div className="pt-8 space-x-3.5">
+            <Button
+              variant="dark"
+              size="sm"
+              onClick={() => router.push("/contact")}
+            >
               <CirclePlus className="size-3.5 mr-1.5" />
               Hire Me
             </Button>
