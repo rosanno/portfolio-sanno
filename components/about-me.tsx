@@ -3,11 +3,13 @@
 import { useEffect, useState } from "react";
 import { CirclePlus, Copy } from "lucide-react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import Header from "@/components/ui/header";
 
 function AboutMe() {
+  const router = useRouter();
   const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
@@ -43,7 +45,11 @@ function AboutMe() {
             A Web Developer based in Philippines.
           </p>
           <div className="pt-4 space-x-3.5">
-            <Button variant="dark" size="sm">
+            <Button
+              variant="dark"
+              size="sm"
+              onClick={() => router.push("/contact")}
+            >
               <CirclePlus className="size-3.5 mr-1.5" />
               Hire Me
             </Button>

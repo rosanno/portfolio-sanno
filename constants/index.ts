@@ -64,6 +64,27 @@ export const techStacks = [
 
 export const projects = [
   {
+    title: "Finance Management System SAAS",
+    slug: "finance",
+    year: "2024",
+    type: "Web development",
+    live: "https://github.com/rosanno/finance-saas-demo",
+    technologies: [
+      "reactjs",
+      "nextjs",
+      "tailwindcss",
+      "shadcn-ui",
+      "clerk",
+      "typescript",
+      "hono.js",
+      "postgresql",
+      "drizzle orm",
+    ],
+    description:
+      "Finance Management System is a comprehensive Software-as-a-Service (SaaS) solution designed to help individuals and businesses manage their finances efficiently. It offers features such as expense tracking, all within an intuitive and user-friendly interface. ",
+    image: "/assets/finance.png",
+  },
+  {
     title: "GoodFood Ordering Platform",
     slug: "goodfood",
     year: "2024",
