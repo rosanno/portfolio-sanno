@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { usePathname, useRouter } from "next/navigation";
 import { RiHome3Line } from "react-icons/ri";
 import { CirclePlus } from "lucide-react";
@@ -12,6 +13,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import ModeToggle from "@/components/mode-toggle";
+import { useState } from "react";
 
 const routes = [
   {
@@ -31,9 +33,23 @@ const routes = [
   },
 ];
 
+type HoverState = {
+  [key: string]: boolean;
+};
+
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
+
+  const [hovered, setHovered] = useState<HoverState>({});
+
+  const handleMouseEnter = (href: string) => {
+    setHovered((prev) => ({ ...prev, [href]: true }));
+  };
+
+  const handleMouseLeave = (href: string) => {
+    setHovered((prev) => ({ ...prev, [href]: false }));
+  };
 
   return (
     <div className="fixed inset-x-2">
@@ -45,11 +61,28 @@ export default function Navbar() {
                 key={route.href}
                 href={route.href}
                 className={cn(
-                  "p-1.5 rounded-full text-gray-500 hover:bg-gray-300/20 hover:text-black dark:text-gray-400/70 hover:dark:bg-gray-300/5 hover:dark:text-white transition duration-300",
+                  "p-1.5 rounded-full flex flex-col gap-x-1 items-center text-gray-500 hover:bg-gray-300/20 hover:text-black dark:text-gray-400/70 hover:dark:bg-gray-300/5 hover:dark:text-white transition duration-300",
                   pathname === route.href &&
                     "bg-gray-300/5 dark:text-white"
                 )}
+                onMouseEnter={() =>
+                  handleMouseEnter(route.href)
+                }
+                onMouseLeave={() =>
+                  handleMouseLeave(route.href)
+                }
               >
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{
+                    opacity: hovered[route.href] ? 1 : 0,
+                    y: hovered[route.href] ? -20 : 5,
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="-translate-y-7 absolute text-xs text-white bg-black/60 dark:bg-gray-500/40 px-2 rounded-full"
+                >
+                  {route.label}
+                </motion.div>
                 <div className="text-2xl">{route.icon}</div>
               </Link>
             ))}

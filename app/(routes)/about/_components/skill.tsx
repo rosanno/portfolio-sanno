@@ -20,7 +20,7 @@ const Skill = ({ name, icon: Icon }: Props) => {
             y: isHovered ? 0 : 10,
           }}
           transition={{ duration: 0.3 }}
-          className="text-xs font-semibold capitalize bg-gray-400/70 text-white dark:bg-gray-300/10 w-fit rounded-full px-1.5 py-0.5"
+          className="text-xs font-semibold capitalize bg-black/40 text-white dark:bg-gray-300/10 w-fit rounded-full px-1.5 py-0.5"
         >
           {name}
         </motion.span>

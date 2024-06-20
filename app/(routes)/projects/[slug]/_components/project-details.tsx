@@ -37,7 +37,7 @@ const ProjectDetails = ({
           <FaArrowRight className="size-3.5 ml-2" />
         </Link>
       </div>
-      <div className="dark:bg-[#E6E6E6] pt-10 pl-10 pr-3 mt-10">
+      <div className="bg-[#DCDDE1] dark:bg-[#E6E6E6] pt-10 pl-10 pr-3 mt-10">
         <div className="h-56 md:h-96 overflow-hidden rounded-tl-md rounded-tr-md shadow-sm">
           <Image
             src={image as string}
