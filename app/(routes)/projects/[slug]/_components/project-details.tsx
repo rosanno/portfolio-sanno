@@ -28,14 +28,16 @@ const ProjectDetails = ({
         </p>
       </div>
       <div className="my-6">
-        <Link
-          href={live as string}
-          target="_blank"
-          className="bg-[#383838] text-white font-semibold dark:text-secondary-foreground hover:bg-[#383838]/80 rounded-md text-sm py-2.5 px-3 flex items-center w-fit"
-        >
-          Visit Website
-          <FaArrowRight className="size-3.5 ml-2" />
-        </Link>
+        {live !== "" && (
+          <Link
+            href={live as string}
+            target="_blank"
+            className="bg-[#383838] text-white font-semibold dark:text-secondary-foreground hover:bg-[#383838]/80 rounded-md text-sm py-2.5 px-3 flex items-center w-fit"
+          >
+            Visit Website
+            <FaArrowRight className="size-3.5 ml-2" />
+          </Link>
+        )}
       </div>
       <div className="bg-[#DCDDE1] dark:bg-[#E6E6E6] pt-10 pl-10 pr-3 mt-10">
         <div className="h-56 md:h-96 overflow-hidden rounded-tl-md rounded-tr-md shadow-sm">

@@ -64,6 +64,17 @@ export const techStacks = [
 
 export const projects = [
   {
+    title: "POS System",
+    slug: "pos",
+    year: "2024",
+    type: "Web development",
+    live: "",
+    technologies: ["php", "laravel", "mysql", "bootstrap"],
+    description:
+      "In particular, this PHP Laravel-based Point of Sale (POS) system places transaction record-keeping at the forefront of its capabilities, making it an indispensable tool for businesses. This all-encompassing solution effortlessly manages products, sales, and customer interactions. To be more precise, the system helps to keep track of all the products along with their sales and so on(codeastro.com). The system’s admin panel provides complete control over product details, from names to images, enabling a seamless user experience. Notably, the system’s focus on a narrow target audience sets it apart, emphasizing essential features over complex integrations, a refreshing alternative to the market’s broad-spectrum offerings. In an overview of this web application, this project utilizes all the necessary aspects and outlines the features of the POS system.",
+    image: "/assets/pos.png",
+  },
+  {
     title: "Finance Management System SAAS",
     slug: "finance",
     year: "2024",
@@ -87,7 +98,7 @@ export const projects = [
   {
     title: "GoodFood Ordering Platform",
     slug: "goodfood",
-    year: "2024",
+    year: "2023",
     type: "Web development",
     live: "https://food-ordering-platform.vercel.app/",
     technologies: [

@@ -25,7 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          "dark:bg-[#161616] bg-[#F0F0F0] px-2.5 py-4 scroll-smooth",
+          "dark:bg-[#0F1214] bg-[#F0F0F0] px-2.5 py-4 scroll-smooth",
           inter.className
         )}
       >
